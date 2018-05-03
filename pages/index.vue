@@ -2,10 +2,10 @@
   <div>
     <div class="row">
       <div class="col col-2">
-        <SearchTimetables />
+        <search-timetables />
       </div>
       <div class="col col-10">
-        10 cols
+        <guest-timetables />
       </div>
     </div>
   </div>
@@ -13,10 +13,12 @@
 
 <script>
 import SearchTimetables from '~/components/SearchTimetables.vue'
+import GuestTimetables from '~/components/GuestTimetables.vue'
 
 export default {
   components: {
-    SearchTimetables
+    SearchTimetables,
+    GuestTimetables
   },
   layout: 'guest'
 }

@@ -5,6 +5,7 @@
 body {
     background: #ffffff;
     margin: 0;
+    font-family: "Helvetica";
 }
 
 /* Navbar */
@@ -18,6 +19,10 @@ body {
 
 .navbar ul li {
     float: left;
+}
+
+.navbar ul li.title {
+    font-size: 1.4em;
 }
 
 .navbar ul li.right {
@@ -50,7 +55,57 @@ body {
     width: 75%;
 }
 
+.gutter-top {
+    padding-top: 20px;
+}
+
+/* Forms */
 select {
     padding: 10px 10px;
-    background: white;
+    background: #f8f8f8;
+    width: 100%;
+}
+
+button {
+    display: inline-block;
+    -webkit-appearance: none;
+    margin: 10px;
+    padding: 10px 30px;
+    cursor: pointer;
+    background: #006030;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background: #007141;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #0e6137;
+    color: white;
+    border: solid 1px white;
+}
+
+td {
+    border: solid 1px #08301c;
+}
+
+th, td {
+    padding: 10px;
+}
+
+/* Text */
+.text-right {
+    text-align: right;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #007141;
 }

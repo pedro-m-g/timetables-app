@@ -5,7 +5,7 @@
             <label>
                 <h1>Carrera:</h1>
             </label>
-            <select name="" id="">
+            <select>
                 <option
                     v-for="career in careers"
                     :value="career.id"
@@ -17,12 +17,12 @@
             <label>
                 <h1>Periodo:</h1>
             </label>
-            <select name="" id="">
+            <select>
                 <option
-                    v-for="career in careers"
-                    :value="career.id"
-                    :key="career.id">
-                    {{ career.name }}
+                    v-for="period in periods"
+                    :value="period.year + '_' + period.period"
+                    :key="period.year + '_' + period.period">
+                    {{ period.year }} - {{ period.period }}
                 </option>
             </select>
           </form>
@@ -38,6 +38,24 @@ export default {
                 id: 1,
                 name: 'Ciencias Computacionales'  
               }
+          ],
+          periods: [
+              {
+                  year: 2018,
+                  period: 2
+              },
+              {
+                  year: 2018,
+                  period: 1
+              },
+              {
+                  year: 2017,
+                  period: 2
+              },
+              {
+                  year: 2017,
+                  period: 1
+              }
           ]
       }
   }
@@ -46,7 +64,10 @@ export default {
 
 <style scoped>
     .search-timetables {
-        padding: 20px;
+        padding: 40px;
+    }
+    fieldset {
+        padding: 0 30px 40px 30px;
     }
     form {
         text-align: center;
