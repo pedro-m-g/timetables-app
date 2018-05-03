@@ -1,13 +1,22 @@
 <template>
-  <div>Hola</div>
+  <div>
+    <div class="row">
+      <div class="col col-2">
+        <SearchTimetables />
+      </div>
+      <div class="col col-10">
+        10 cols
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import SearchTimetables from '~/components/SearchTimetables.vue'
 
 export default {
   components: {
-    AppLogo
+    SearchTimetables
   },
   layout: 'guest'
 }
