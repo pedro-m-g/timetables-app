@@ -4,6 +4,9 @@
       <div class="col col-2">
         <menu-view />
       </div>
+        <div>
+            <h3>Hola: Adolfo</h3>
+        </div>
       <div class="col col-10">
         <dashboard />
       </div>

@@ -1,9 +1,7 @@
 <template>
     
   <div>
-      <div class="username">
-          <h3>Hola: Adolfo</h3>
-        </div>
+      
       <div class="sidebar">
       
       <ul id="list">
@@ -46,6 +44,9 @@ export default {
 </script>
 
 <style>
+    #username-field{
+        text-align: center;
+    }
     .sidebar{
         width: 350px;
     }

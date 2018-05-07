@@ -1,107 +1,75 @@
 <template>
   <div class="root">
-      <tabs>
-        <tab
-            v-for="semester in timetable.semesters"
-            :key="semester.id"
-            :name="'Semestre ' + semester.semester_num">
-          <timetable :timetable="semester.assignments" />
-        </tab>
-      </tabs>
-      <div class="text-right gutter-top">
-        <button>Imprimir</button>
-        <button>Descargar</button>
+      <button>Nuevo Horario</button>
+      
+      <div class="row">
+          <div v-for="group in Groups"
+            :value="group.id"
+            :key="group.id" class="col col-6 square">
+          <p>Grupo {{group.name}}</p>
+            <p>{{group.description}}</p>
+        <div id="option">
+            <button class="options">Ver</button>
+             <button class="options">Editar</button>
+             <button class="options">Eliminar</button>
+        </div>
       </div>
+    </div>
   </div>
 </template>
 <script>
-import Tabs from './tabs/Tabs.vue'
-import Tab from './tabs/Tab.vue'
 
-import Timetable from './timetables/Timetable.vue'
 export default {
-  data() {
-    return {
-      timetable: {
-        semesters: [
-          {
-            id: 1,
-            semester_num: 1,
-            assignments: [
+  data () {
+      return {
+          Groups: [
               {
-                hour: '7:00',
-                days: [
-                  {
-                    id: 1,
-                    subject: 'Reingenieria de Procesos'
-                  },
-                  {
-                    id: 2,
-                    subject: 'Reingenieria de Procesos'
-                  },
-                  {
-                    id: 3,
-                    subject: 'Reingenieria de Procesos'
-                  },
-                  {
-                    id: 4,
-                    subject: 'Reingenieria de Procesos'
-                  },
-                  {
-                    id: 5,
-                    subject: 'Reingenieria de Procesos'
-                  },
-                  {
-                    id: 6,
-                    subject: 'Reingenieria de Procesos'
-                  }
-                ]
+                id: 1,
+                name: '6845',
+                description: 'Descricion del grupo'
               },
               {
-                hour: '8:00',
-                days: [
-                  {
-                    id: 7,
-                    subject: 'Reingenieria de Procesos'
-                  },
-                  {
-                    id: 8,
-                    subject: ''
-                  },
-                  {
-                    id: 9,
-                    subject: ''
-                  },
-                  {
-                    id: 10,
-                    subject: 'Reingenieria de Procesos'
-                  },
-                  {
-                    id: 11,
-                    subject: 'Reingenieria de Procesos'
-                  },
-                  {
-                    id: 12,
-                    subject: 'Reingenieria de Procesos'
-                  }
-                ]
+                id: 2,
+                name: '4521',
+                  description: 'Descricion del grupo'
+              },
+              {
+                id: 3,
+                name: '9851',
+                description: 'Descricion del grupo'
+              },
+              {
+                id: 4,
+                name: '1235',
+                description: 'Descricion del grupo'
               }
-            ]
-          }
-        ]
+          ]
       }
-    }
-  },
-  components: {
-    Tabs,
-    Tab,
-    Timetable
   }
 }
+
 </script>
 
-<style scoped>
+<style scoped >
 .root {
   padding: 40px;
 }
+.square{
+    width: 250px;
+    height: 200px;
+    padding: 20px;
+    background-color: #eaeaea;
+    margin: 25px;
+    border-radius: 2px;
+    border: solid #c1c1c1 2px;
+    }
+    
+    .options{
+        display: inline-block;
+        background-color: aqua;
+        height: 20px;
+        width: 35px;
+        text-align: center;
+        color:black;
+    }
 </style>
