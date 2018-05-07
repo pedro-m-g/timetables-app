@@ -1,15 +1,25 @@
 <template>
-    <h1>Hola</h1>
+  <div>
+    <div class="row">
+      <div class="col col-2">
+        <menu-view />
+      </div>
+      <div class="col col-10">
+        <dashboard />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+import MenuView from '~/components/MenuView.vue'
+import Dashboard from '~/components/Dashboard.vue'
 
 export default {
-  
+  components: {
+    MenuView,
+    Dashboard
+  },
   layout: 'logged'
 }
 </script>
-
-<style>
-   
-</style>

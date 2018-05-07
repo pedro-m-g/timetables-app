@@ -10,9 +10,9 @@
             <label>
                 <h1>Contraseña</h1>
             </label>
-            <input type="password" name="password"><br>
+            <input type="password" name="password"><br><br> 
               
-              <button>Iniciar Sesión</button>
+            <button>Iniciar Sesión</button>
           </form>
       </fieldset>
   </div>
@@ -27,6 +27,7 @@
     }
     fieldset {
         padding: 0 30px 40px 30px;
+        
     }
     form {
         text-align: center;
