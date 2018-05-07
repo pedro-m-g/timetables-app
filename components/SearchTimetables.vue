@@ -37,6 +37,18 @@ export default {
               {
                 id: 1,
                 name: 'Ciencias Computacionales'  
+              },
+              {
+                id: 2,
+                name: 'Matemáticas Aplicadas'
+              },
+              {
+                id: 3,
+                name: 'Biología'  
+              },
+              {
+                id: 4,
+                name: 'Física'  
               }
           ],
           periods: [
