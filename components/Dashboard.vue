@@ -8,10 +8,16 @@
             :key="group.id" class="col col-6 square">
           <p>Grupo {{group.name}}</p>
             <p>{{group.description}}</p>
-        <div id="option">
-            <button class="options">Ver</button>
-             <button class="options">Editar</button>
-             <button class="options">Eliminar</button>
+        <div id="options">
+             <button class="option">
+               <i class="fa fa-eye"></i>
+             </button>
+             <button class="option">
+               <i class="fa fa-pencil"></i>
+             </button>
+             <button class="option close">
+               <i class="fa fa-close"></i>
+             </button>
         </div>
       </div>
     </div>
@@ -62,14 +68,20 @@ export default {
     margin: 25px;
     border-radius: 2px;
     border: solid #c1c1c1 2px;
-    }
+    position: relative;
+}
     
-    .options{
-        display: inline-block;
-        background-color: aqua;
-        height: 20px;
-        width: 35px;
-        text-align: center;
-        color:black;
-    }
+.option {
+    display: inline-block;
+    background-color: aqua;
+    height: 20px;
+    width: 35px;
+    text-align: center;
+    color:black;
+}
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
 </style>
