@@ -65,6 +65,7 @@ export default {
         padding-top: 15px; 
         
     }
+    
     .element:hover{
         background-color: #5eab5e;
         color: white;
