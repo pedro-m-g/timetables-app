@@ -7,12 +7,12 @@
       <div>
         <h1>Iniciar sesión</h1>
         <div class="loginform">
-          <form>
-            <input v-model="usuario" placeholder="usuario">
-            <input v-model="password" type="password" placeholder="contraseña">
+          <form @submit.prevent="login">
+            <input v-model="usuario" placeholder="Usuario">
+            <input v-model="password" type="password" placeholder="Contraseña">
             <div class="loginBottom">
               <a href="#">¿Olvidaste tu contraseña?</a>
-              <button type="button" href="#">Iniciar sesión</button>
+              <button type="submit">Iniciar sesión</button>
             </div>
           </form>
         </div>
@@ -26,11 +26,24 @@ import GuestNavbar from '~/components/GuestNavbar.vue'
 export default {
   components: {
       GuestNavbar
+  },
+  data () {
+    return {
+      credentials: {
+        email: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    login () {
+      this.$router.push('/dashboard')
+    }
   }
 };
 </script>
 
-<style>
+<style scoped>
 
 .navBar{
   position: absolute;
