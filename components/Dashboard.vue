@@ -33,7 +33,7 @@
             <form @submit.prevent="addPeriod">
               <input type="text" placeholder="Periodo: ej. 2018-1" v-model="period">
                 <button class="modal-default-button" v-on:click="showNewModal = false">
-                OK
+                Aceptar
               </button>
             </form>
 
