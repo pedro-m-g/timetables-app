@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-      <button v-on:click="showNewModal = true">Nuevo Horario</button>
+      <button v-on:click="showNewModal = true">Registrar Asignatura</button>
       
       
       <transition name="modal" v-if="showModal">
@@ -76,19 +76,23 @@ export default {
           Groups: [
               {
                 id: 1,
-                name: '2018-1'
+                name: 'Reingeniería'
               },
               {
                 id: 2,
-                name: '2017-2'
+                name: 'PDI'
               },
              {
                 id: 3,
-                name: '2017-1'
+                name: 'Graficacion'
               },
               {
                 id: 4,
-                name: '2016-2'
+                name: 'Sistemas distribuidos'
+              },
+              {
+                id: 5,
+                name: 'Compiladores'
               }
           ],
           showModal:false,
