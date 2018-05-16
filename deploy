@@ -1,0 +1,7 @@
+LOCAL_DIR="dist/*"
+USER="horariosfc"
+HOST="lcc.ens.uabc.mx"
+REMOTE_DIR="~/public_html/"
+
+yarn generate
+scp -r $LOCAL_DIR "$USER@$HOST:$REMOTE_DIR"

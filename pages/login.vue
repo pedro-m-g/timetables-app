@@ -8,8 +8,8 @@
         <h1>Iniciar sesión</h1>
         <div class="loginform">
           <form @submit.prevent="login">
-            <input v-model="usuario" placeholder="Usuario">
-            <input v-model="password" type="password" placeholder="Contraseña">
+            <input v-model="credentials.email" placeholder="Usuario">
+            <input v-model="credentials.password" type="password" placeholder="Contraseña">
             <div class="loginBottom">
               <a href="#">¿Olvidaste tu contraseña?</a>
               <button type="submit">Iniciar sesión</button>

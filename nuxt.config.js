@@ -1,3 +1,4 @@
+var base = '/~horariosfc/';
 module.exports = {
   /*
   ** Headers of the page
@@ -11,7 +12,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: '/app.css' },
+      { rel: 'stylesheet', type: 'text/css', href: base + 'app.css' },
       { rel: 'stylesheet', type: 'text/css', href: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' }
     ]
   },
@@ -36,5 +37,8 @@ module.exports = {
         })
       }
     }
+  },
+  router: {
+    base: base
   }
 }
