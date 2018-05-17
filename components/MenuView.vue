@@ -7,9 +7,11 @@
       <ul id="list">
           <li
             v-for="type in Types"
-            :value="type.id"
-            :key="type.id" class="element">
-            {{ type.name }}
+            :key="type.id"
+            class="element">
+                <nuxt-link :to="type.url">
+                    {{ type.name }}
+                </nuxt-link>
           </li>
     </ul>
  </div>
@@ -23,19 +25,23 @@ export default {
           Types: [
               {
                 id: 1,
-                name: 'Escritorio'  
+                name: 'Escritorio',
+                url: '/dashboard/'
               },
               {
                 id: 2,
-                name: 'Materias'
+                name: 'Materias',
+                url: '/dashboard/materias'
               },
               {
                 id: 3,
-                name: 'Espacios'  
+                name: 'Espacios',
+                url: '/dashboard/espacios'
               },
               {
                 id: 4,
-                name: 'Académicos'  
+                name: 'Académicos',
+                url: '/dashboard/academicos'
               }
           ]
       }
@@ -50,24 +56,25 @@ export default {
     .sidebar{
         width: 350px;
     }
-    .flex-column{
-        
-    }
     #list > li{
         list-style: none;
     }
-    .element{
-        
+    .element {
         margin-top: 25px;
         height: 50px;
         text-align: center;
         cursor: pointer;
-        padding-top: 15px; 
-        
+        padding: 15px;
     }
     
     .element:hover{
         background-color: #5eab5e;
         color: white;
+    }
+
+    .element a {
+        text-decoration: none;
+        color: black;
+        width: 100%;
     }
 </style>

@@ -4,24 +4,9 @@
       <div class="col col-2">
         <menu-view />
       </div>
-        <div>
-            <h3>Hola: Adolfo</h3>
-            <div class="button-group">
-                <button v-on:click="windowActived = 0">Periodo</button>
-                <button v-on:click="windowActived = 1">Asignaturas</button>
-                <button v-on:click="windowActived = 2">Académicos</button>
-            </div>
-        </div>
       <div class="col col-10" v-if="windowActived==0">
-        <dashboard />
+        <nuxt-child />
       </div>
-        <div class="col col-10" v-if="windowActived==1">
-        <materias />
-      </div>
-        <div class="col col-10" v-if="windowActived==2">
-        <academicos />
-      </div>
-        
     </div>
   </div>
 </template>
