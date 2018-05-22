@@ -13,6 +13,7 @@
                     {{ type.name }}
                 </nuxt-link>
           </li>
+          <li class="element"><a href="/registerMenu" >Registrar</a></li>
     </ul>
  </div>
     </div>
