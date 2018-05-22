@@ -8,7 +8,7 @@
 			<h1> Registrar </h1>
 			<div class="">
 				<a href="#"><div class="grid-item">Aulas</div></a>
-				<a href="#"><div class="grid-item">Academicos</div></a>
+				<a href="/Forms/academicoForm"><div class="grid-item">Academicos</div></a>
 				<a href="/Forms/MateriasForm"><div class="grid-item">Materias</div></a>
 				<div class="grid-item">...</div>
 
