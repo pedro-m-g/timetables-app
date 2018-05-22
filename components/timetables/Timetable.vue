@@ -15,11 +15,11 @@
           <tbody>
               <tr
                 v-for="assignment in timetable"
-                :key="assignment.id">
+                :key="assignment.id" >
                   <td>{{ assignment.hour }}</td>
                   <td
                     v-for="day in assignment.days"
-                    :key="day.id">
+                    :key="day.id" >
                     {{ day.subject }}
                   </td>
               </tr>
@@ -39,3 +39,8 @@ export default {
     }
 }
 </script>
+<style>
+    .materia:hover{
+        color: red;
+    }
+</style>

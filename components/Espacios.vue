@@ -50,7 +50,7 @@
           <div v-for="group in Groups"
             :value="group.id"
             :key="group.id" class="col col-6 square">
-          <p>Periodo {{group.name}}</p>
+          <p>{{group.name}}</p>
         <div id="options">
              <button class="option" @click="showModal = true">
                <i class="fa fa-eye"></i>
@@ -76,23 +76,23 @@ export default {
           Groups: [
               {
                 id: 1,
-                name: 'Reingeniería'
+                name: 'LD1'
               },
               {
                 id: 2,
-                name: 'PDI'
+                name: 'LD2'
               },
              {
                 id: 3,
-                name: 'Graficacion'
+                name: 'Aula Equipada'
               },
               {
                 id: 4,
-                name: 'Sistemas distribuidos'
+                name: 'D6'
               },
               {
                 id: 5,
-                name: 'Compiladores'
+                name: 'D7'
               }
           ],
           showModal:false,

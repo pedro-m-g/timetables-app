@@ -30,7 +30,7 @@ export default {
               },
               {
                 id: 2,
-                name: 'Materias',
+                name: 'Asignaturas',
                 url: '/dashboard/materias'
               },
               {

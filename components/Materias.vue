@@ -50,7 +50,7 @@
           <div v-for="group in Groups"
             :value="group.id"
             :key="group.id" class="col col-6 square">
-          <p>Periodo {{group.name}}</p>
+          <p>{{group.name}}</p>
         <div id="options">
              <button class="option" @click="showModal = true">
                <i class="fa fa-eye"></i>

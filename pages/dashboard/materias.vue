@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Materias />>
+        <Materias />
     </div>
 </template>
 <script>

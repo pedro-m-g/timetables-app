@@ -1,7 +1,13 @@
 <template>
   <div class="root">
       <button v-on:click="showNewModal = true">Registrar Académico</button>
-      
+      <select style="width:250px;">
+          <option>Ciencias computacionales</option>
+          <option>Matemáticas Aplicadas</option>
+          <option>Física</option>
+          <option>Biología</option>
+          <option>Profesores de asignatura</option>
+        </select>
       
       <transition name="modal" v-if="showModal">
     <div class="modal-mask">
@@ -31,7 +37,15 @@
           
             
             <form @submit.prevent="addPeriod">
-              <input type="text" placeholder="Periodo: ej. 2018-1" v-model="period">
+              <input type="text" placeholder="Nombre del académico" v-model="period"><br><br>
+                <label>Carrera </label><br>
+                <select style="width:250px;">
+                  <option>Ciencias computacionales</option>
+                  <option>Matemáticas Aplicadas</option>
+                  <option>Física</option>
+                  <option>Biología</option>
+                  <option>Profesor de asignatura</option>
+                </select>
                 <button class="modal-default-button" v-on:click="showNewModal = false">
                 OK
               </button>
@@ -50,7 +64,7 @@
           <div v-for="group in Groups"
             :value="group.id"
             :key="group.id" class="col col-6 square">
-          <p>Periodo {{group.name}}</p>
+          <p>{{group.name}}</p>
         <div id="options">
              <button class="option" @click="showModal = true">
                <i class="fa fa-eye"></i>
@@ -173,7 +187,7 @@ input{
 
 .modal-container {
   width: 300px;
-height: 300px;
+height: 400px;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;
