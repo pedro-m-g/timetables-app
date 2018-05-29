@@ -2,16 +2,19 @@
   <div>
     <div class="row">
       <div class="col col-2">
-        <menu-view />
-      </div>
-      <div class="col col-10" v-if="windowActived==0">
+            <MenuView />
+    </div>
+        
+      <div class="col col-10 gutters" v-if="windowActived==0">
         <nuxt-child />
       </div>
+        
     </div>
   </div>
 </template>
 
 <script>
+    
 import MenuView from '~/components/MenuView.vue'
 import Dashboard from '~/components/Dashboard.vue'
 import Materias from '~/components/Materias.vue'
@@ -24,11 +27,16 @@ export default {
       }  
     },
   components: {
-    MenuView,
-    Dashboard,
+      MenuView,
+        Dashboard,
     Materias,
     Academicos
   },
   layout: 'logged'
 }
 </script>
+<style scoped>
+  .gutters {
+    padding: 0 40px
+  }
+</style>
