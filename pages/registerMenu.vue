@@ -9,7 +9,9 @@
 			<div class="">
 				<a href="#"><div class="grid-item">Aulas</div></a>
 				<a href="#"><div class="grid-item">Academicos</div></a>
-				<a href="/Forms/MateriasForm"><div class="grid-item">Materias</div></a>
+				<nuxt-link to="/Forms/MateriasForm">
+          <div class="grid-item">Materias</div>
+        </nuxt-link>
 				<div class="grid-item">...</div>
 
 			</div>

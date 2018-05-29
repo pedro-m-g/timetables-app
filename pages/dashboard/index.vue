@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col col-2">
+        <div class="col">
             <Selector />
              <LoggedTimetables />
         </div>

@@ -13,7 +13,6 @@
                     {{ type.name }}
                 </nuxt-link>
           </li>
-          <li class="element"><a href="/registerMenu" >Registrar</a></li>
     </ul>
  </div>
     </div>
@@ -43,6 +42,11 @@ export default {
                 id: 4,
                 name: 'Académicos',
                 url: '/dashboard/academicos'
+              },
+              {
+                id: 5,
+                name: 'Registrar',
+                url: '/registerMenu'
               }
           ]
       }

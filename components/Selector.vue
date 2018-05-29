@@ -169,10 +169,10 @@ export default {
     label {
         display: block;
     }*/
-    #contenedor select{
+    #contenedor select {
         display: inline-block;
     }
     .item{
-        float: right;
+        /* float: right; */
     }
 </style>

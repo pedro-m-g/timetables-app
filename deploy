@@ -2,6 +2,8 @@ LOCAL_DIR="dist/*"
 USER="horariosfc"
 HOST="lcc.ens.uabc.mx"
 REMOTE_DIR="~/public_html/"
+APP_URL="http://$HOST/~horariosfc/"
 
 yarn generate
 scp -r $LOCAL_DIR "$USER@$HOST:$REMOTE_DIR"
+echo "La app ha sido instalada en $APP_URL"
