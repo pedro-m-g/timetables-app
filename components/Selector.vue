@@ -4,6 +4,7 @@
           <h4 style="text-align:center;">Ver Horarios</h4>
           <div id="contenedor">
               <select class="item">
+                  <option selected disabled>Carrera</option>
                 <option
                     v-for="career in careers"
                     :value="career.id"
@@ -12,6 +13,7 @@
                 </option>
             </select>
           <select class="item">
+              <option selected disabled>Periodo</option>
                 <option
                     v-for="period in periods"
                     :value="period.year + '_' + period.period"
@@ -20,6 +22,7 @@
                 </option>
             </select>
           <select>
+              <option selected disabled>Semestre</option>
                   <option v-for="semester in semesters"
                           :value="semester.id"
                           :key="semester.key">

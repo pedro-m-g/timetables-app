@@ -45,7 +45,7 @@
       
       
       
-      
+     <!-- 
       <div class="row">
           <div v-for="group in Groups"
             :value="group.id"
@@ -64,7 +64,17 @@
         </div>
               
       </div>
+    </div> -->
+      
+      <div class="row">
+          <div class="col col-6" id="optativas">
+          <h3>Asignaturas Obligatorias</h3>
+        </div>
+      <div class="col col-6" id="obligatorias">
+          <h3>Asignaturas Optativas</h3>
+        </div>
     </div>
+      
   </div>
 </template>
 <script>
@@ -221,4 +231,7 @@ height: 300px;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+    #obligatorias{
+        margin-left: 250px;
+    }
 </style>
