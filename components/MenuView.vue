@@ -53,9 +53,6 @@ export default {
     #username-field{
         text-align: center;
     }
-    .sidebar{
-        width: 350px;
-    }
     #list > li{
         list-style: none;
     }

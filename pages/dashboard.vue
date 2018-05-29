@@ -5,8 +5,7 @@
             <MenuView />
     </div>
         
-      <div class="col col-10" v-if="windowActived==0">
-        
+      <div class="col col-10 gutters" v-if="windowActived==0">
         <nuxt-child />
       </div>
         
@@ -36,3 +35,8 @@ export default {
   layout: 'logged'
 }
 </script>
+<style scoped>
+  .gutters {
+    padding: 0 40px
+  }
+</style>
