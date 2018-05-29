@@ -1,8 +1,33 @@
 <template>
-  <div class="search-timetables">
-      <fieldset>
-          <h3 style="text-align:center;">Ver Horarios</h3>
-          <form action="">
+  <div class="">
+      <!--<fieldset> -->
+          <h4 style="text-align:center;">Ver Horarios</h4>
+          <div id="contenedor">
+              <select class="item">
+                <option
+                    v-for="career in careers"
+                    :value="career.id"
+                    :key="career.id">
+                    {{ career.name }}
+                </option>
+            </select>
+          <select class="item">
+                <option
+                    v-for="period in periods"
+                    :value="period.year + '_' + period.period"
+                    :key="period.year + '_' + period.period">
+                    {{ period.year }} - {{ period.period }}
+                </option>
+            </select>
+          <select>
+                  <option v-for="semester in semesters"
+                          :value="semester.id"
+                          :key="semester.key">
+                      {{semester.name}}
+                </option>
+            </select>
+        </div>
+         <!-- <form action="">
             <label style="margin-top:25px;">Carrera</label><br>
             <select>
                 <option
@@ -30,8 +55,8 @@
                       {{semester.name}}
                 </option>
             </select>
-          </form>
-      </fieldset>
+          </form> -->
+     <!-- </fieldset>-->
   </div>
 </template>
 <script>
@@ -127,7 +152,7 @@ export default {
 </script>
 
 <style scoped>
-    .search-timetables {
+    /*.search-timetables {
         padding: 40px;
         width: 400px;
         float: right;
@@ -140,5 +165,11 @@ export default {
     }
     label {
         display: block;
+    }*/
+    #contenedor select{
+        display: inline-block;
+    }
+    .item{
+        float: right;
     }
 </style>

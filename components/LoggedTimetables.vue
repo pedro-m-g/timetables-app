@@ -28,26 +28,28 @@
                   <td >{{ assignment.hour }}</td>
                   <td
                     v-for="day in assignment.days"
-                    :key="day.id" v-bind:class="{ 'borraclase': isDelete, 'agregaclase': !isDelete }" v-on:click="modifyAssignments(day.id)">
+                    :key="day.id" class="item" v-on:click="modifyAssignments(day.id)">
                     {{ day.subject }}
                   </td>
+                  <!-- v-bind:class="{ 'borraclase': isDelete, 'agregaclase': !isDelete }" -->
               </tr>
           </tbody>
       </table>
           
         <div id="selectorMaterias">
-            <h3>Selecciona una materia para agregar</h3>
+            <h3>Modificar Horario</h3>
             <select v-model="assignmentToAdd">
-                <option disabled value="">Seleccionar</option>
-                
+                <option disabled value="">Seleccionar opción</option>
+                <option id="borrarAsignatura">Borrar Asignatura</option>
                 <option>Reingeniería de procesos</option>
                 <option>Sistemas distribuidos</option>
                 <option>PDI</option>
                 <option>Compiladores</option>
                 <option>MGVDI</option>
+                
             </select>
         </div>
-          <h3>Borrar materia</h3><input type="checkbox" v-model="isDelete">
+          <!--<h3>Borrar materia</h3><input type="checkbox" v-model="isDelete">-->
 
   </div>
       <!--ARREGLAR BUG DEL HOVER, EN LA MITAD DE LA DERECHA NO SE APLICA :( -->
@@ -250,6 +252,13 @@ export default {
         modifyAssignments : function(index){
             var indice = Math.floor((index-1)/6);
             var indice2 = (index-1)%6;
+            //alert(this.assignmentToAdd);
+            if(this.assignmentToAdd == "Borrar Asignatura"){
+                this.isDelete = true;
+            }
+            else{
+                this.isDelete = false;
+            }
             if(this.isDelete == true){
                 this.assignments[indice].days[indice2].subject = '';
             }
@@ -277,6 +286,10 @@ export default {
 .root {
   padding: 40px;
 }
+    .item:hover{
+        background-color: #eaeaea;
+        cursor: pointer;
+    }
     .borraclase:hover{
         background-color: #e24f4f;
         cursor: pointer;
@@ -285,4 +298,9 @@ export default {
         background-color: green ;
         cursor: pointer;
     }
+    #borrarAsignatura{
+        color: #e24f4f;
+        font-weight: bold;
+    }
+    
 </style>
