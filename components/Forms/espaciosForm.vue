@@ -1,9 +1,5 @@
 <template>
   <section class="container">
-    <div class="navBar">
-      <LoggedNavbar/> 
-    </div>
-
     <div class="box">
       <h1> Registrar espacio</h1>
       <form class="form">

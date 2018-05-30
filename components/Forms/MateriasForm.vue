@@ -1,12 +1,8 @@
 <template>
   <section class="container">
-    <div class="navBar">
-      <LoggedNavbar/> 
-    </div>
-
     <div class="box">
       <h1> Registrar Materia</h1>
-      <form class="form">
+      <form @submit.prevent="$emit('submit', $event)" class="form">
         <label for="fclave">Clave</label>
         <input type="text" id="fclave" name="clave">
 
@@ -102,16 +98,13 @@ h1{
 .box{
   border: 4px solid #007141;
   border-radius: 25px;
-  width: 40%;
-  height: 40%;
-  background-color: #FFFFF;
+  background-color: white;
   box-shadow: 5px 10px #888888;
   margin: auto;
   padding: 20px;
 }
 
 .container {
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

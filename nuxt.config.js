@@ -1,5 +1,5 @@
-var base = '/~horariosfc/';
-// var base = '/';
+// var base = '/~horariosfc/';
+var base = '/';
 module.exports = {
   /*
   ** Headers of the page
