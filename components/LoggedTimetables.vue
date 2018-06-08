@@ -40,6 +40,7 @@
     </div>
   </transition>
       <div>
+          <button v-on:click="inicializar()">Nuevo Horario</button>
       <table>
           <thead>
               <tr>
@@ -403,6 +404,15 @@ export default {
             this.assignments[indice].days[indice2].profesorAsignado = this.docenteSeleccionado;
             this.assignments[indice].days[indice2].edificioAsignado = this.aulaSeleccionada;
             this.showModal = false;
+        },
+        inicializar(){
+            for(var i=0;i<this.assignments.length;i++){
+                for(let dia of this.assignments[i].days){
+                    dia.profesorAsignado = 'Vacante';
+                    dia.subject = '';
+                    dia.edificioAsignado = 'D1';
+                }
+            }
         }
         /*addPeriod : function(){
             this.Groups.push({id:this.Groups.length+1,name:this.period});

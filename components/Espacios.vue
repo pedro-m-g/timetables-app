@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-      <button v-on:click="showNewModal = true">Registrar espacio</button>
+      <button v-on:click="showNewModal = true">Registrar Espacio</button>
       
       
       <transition name="modal" v-if="showModal">
@@ -26,14 +26,14 @@
       <transition name="modal" v-if="showNewModal">
     <div class="modal-mask">
       <div class="modal-wrapper">
-        <espacios-form @submit="showNewModal = false" />
+        <materias-form @submit="showNewModal = false" />
       </div>
     </div>
   </transition>
       
       
       
-      
+     <!-- 
       <div class="row">
           <div v-for="group in Groups"
             :value="group.id"
@@ -52,19 +52,87 @@
         </div>
               
       </div>
+    </div> -->
+      
+      <div class="row">
+          <div class="col col-6" id="optativas">
+          <h3>Espacios</h3>
+              <button class="accordion">Edificio D</button>
+                <div v-for="materia in basicasObligatorias"
+            :value="materia.id"
+            :key="materia.id" class="panel">
+                    <p alt="Eliminar materia" class="materia" v-on:click="deleteMateria(materia.id,basicasObligatorias)">{{materia.name}}</p></div>
+
+                <button class="accordion" v-on:click="displayAcordion">LD</button>
+                <div v-for="materia in diciplinariasObligatorias"
+            :value="materia.id"
+            :key="materia.id" class="panel">
+                    <p alt="Eliminar materia" class="materia">{{materia.name}}</p></div>
+
+                <button class="accordion" v-on:click="displayAcordion">Edificio A</button>
+                <div v-for="materia in terminalesObligatorias"
+            :value="materia.id"
+            :key="materia.id" class="panel">
+                    <p alt="Eliminar materia" class="materia">{{materia.name}}</p></div>
+              
+              <button class="accordion" v-on:click="displayAcordion">Laboratorios</button>
+                <div v-for="materia in laboratorios"
+            :value="materia.id"
+            :key="materia.id" class="panel">
+                    <p alt="Eliminar materia" class="materia">{{materia.name}}</p></div>
+        </div>
+          
+          
+      
     </div>
+      
   </div>
 </template>
 <script>
-import EspaciosForm from '@/components/Forms/EspaciosForm'
+import MateriasForm from '@/components/Forms/MateriasForm'
 export default {
   components: {
-    EspaciosForm
+    MateriasForm
   },
   data () {
       return {
           period: '',
-          Groups: [
+          isActivedAc1 : false,
+          basicasObligatorias: [
+              {
+                id: 1,
+                name: 'D1'
+              },
+              {
+                id: 2,
+                name: 'D2'
+              },
+             {
+                id: 3,
+                name: 'D3'
+              },
+              {
+                id: 4,
+                name: 'D4'
+              },
+              {
+                id: 5,
+                name: 'D5'
+              },
+              {
+                id: 6,
+                name: 'D6'
+              },
+              {
+                id: 7,
+                name: 'D7'
+              },
+              {
+                id: 5,
+                name: 'D8'
+              }
+          ],
+          diciplinariasObligatorias: [
               {
                 id: 1,
                 name: 'LD1'
@@ -72,19 +140,36 @@ export default {
               {
                 id: 2,
                 name: 'LD2'
-              },
-             {
-                id: 3,
-                name: 'Aula Equipada'
-              },
-              {
-                id: 4,
-                name: 'D6'
-              },
-              {
-                id: 5,
-                name: 'D7'
               }
+          ],
+          terminalesObligatorias: [
+              {
+                id: 1,
+                name: 'A1'
+              },
+              {
+                id: 1,
+                name: 'A2'
+              },
+              {
+                id: 1,
+                name: 'A3'
+              },
+              {
+                id: 1,
+                name: 'A4'
+              },
+              {
+                id: 1,
+                name: 'A5'
+              },
+          ],
+          laboratorios: [
+              {
+                  id: 1,
+                  name: 'Laboratorio de electricidad y magenetismo'
+              }
+              
           ],
           showModal:false,
           showNewModal: false
@@ -92,14 +177,15 @@ export default {
   },
 methods: 
     {
-        deletePeriod : function(index){
+        deleteMateria : function(index,arreglo){
             //alert(index);
-            this.Groups.splice(index-1,1);
+            this.arreglo.splice(index-1,1);
         },
         addPeriod : function(){
             this.Groups.push({id:this.Groups.length+1,name:this.period});
             this.period = '';
-        }
+        },
+        
     
     }
 }
@@ -163,8 +249,7 @@ input{
 }
 
 .modal-container {
-  width: 300px;
-height: 300px;
+  width: 80%;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;
@@ -212,4 +297,39 @@ height: 300px;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+    #obligatorias{
+        margin-left: 250px;
+    }
+    
+    .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+        
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+    
+    .materia:hover{
+        text-decoration: underline;
+        cursor: pointer;
+        color: red;
+    }
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: block;
+    overflow: hidden;
+}
+
 </style>

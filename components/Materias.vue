@@ -57,9 +57,45 @@
       <div class="row">
           <div class="col col-6" id="optativas">
           <h3>Asignaturas Obligatorias</h3>
+              <button class="accordion">Etapa Básica</button>
+                <div v-for="materia in basicasObligatorias"
+            :value="materia.id"
+            :key="materia.id" class="panel">
+                    <p alt="Eliminar materia" class="materia" v-on:click="deleteMateria(materia.id,basicasObligatorias)">{{materia.name}}</p></div>
+
+                <button class="accordion" v-on:click="displayAcordion">Etapa Disciplinaria</button>
+                <div v-for="materia in diciplinariasObligatorias"
+            :value="materia.id"
+            :key="materia.id" class="panel">
+                    <p alt="Eliminar materia" class="materia">{{materia.name}}</p></div>
+
+                <button class="accordion" v-on:click="displayAcordion">Etapa Terminal</button>
+                <div v-for="materia in terminalesObligatorias"
+            :value="materia.id"
+            :key="materia.id" class="panel">
+                    <p alt="Eliminar materia" class="materia">{{materia.name}}</p></div>
         </div>
-      <div class="col col-6" id="obligatorias">
+          
+          
+      <div class="col col-6" id="optativas">
           <h3>Asignaturas Optativas</h3>
+              <button class="accordion">Etapa Básica</button>
+                <div v-for="materia in basicasOptativas"
+            :value="materia.id"
+            :key="materia.id" class="panel">
+                    <p alt="Eliminar materia" class="materia">{{materia.name}}</p></div>
+
+                <button class="accordion" v-on:click="displayAcordion">Etapa Disciplinaria</button>
+                <div v-for="materia in diciplinariasOptativas"
+            :value="materia.id"
+            :key="materia.id" class="panel">
+                    <p alt="Eliminar materia" class="materia">{{materia.name}}</p></div>
+
+                <button class="accordion" v-on:click="displayAcordion">Etapa Terminal</button>
+                <div v-for="materia in terminalesOptativas"
+            :value="materia.id"
+            :key="materia.id" class="panel">
+                    <p alt="Eliminar materia" class="materia">{{materia.name}}</p></div>
         </div>
     </div>
       
@@ -74,27 +110,207 @@ export default {
   data () {
       return {
           period: '',
-          Groups: [
+          isActivedAc1 : false,
+          basicasObligatorias: [
               {
                 id: 1,
-                name: 'Reingeniería'
+                name: 'Comunicación Oral y escrita'
               },
               {
                 id: 2,
-                name: 'PDI'
+                name: 'Diseño de Algoritmos'
               },
              {
                 id: 3,
-                name: 'Graficacion'
+                name: 'Cálculo Diferencial'
               },
               {
                 id: 4,
-                name: 'Sistemas distribuidos'
+                name: 'Geometría Vectorial'
+              },
+              {
+                id: 5,
+                name: 'Algebra Superior'
+              },
+              {
+                id: 6,
+                name: 'Historia e Impacto de la Ciencia	'
+              },
+              {
+                id: 7,
+                name: 'Formación de Valores'
+              },
+              {
+                id: 5,
+                name: 'Algebra Lineal'
+              },
+              {
+                id: 5,
+                name: 'Mecánica'
+              },
+              {
+                id: 5,
+                name: 'Introducción a la Programación'
+              },
+              {
+                id: 5,
+                name: 'Cálculo Integral'
+              },
+              {
+                id: 5,
+                name: 'Métodos Experimentales'
+              },
+              {
+                id: 5,
+                name: 'Estructura de datos y algoritmos'
+              },
+              {
+                id: 5,
+                name: 'Cálculo Vectorial'
+              },
+              {
+                id: 5,
+                name: 'Probabilidad'
+              },
+              {
+                id: 5,
+                name: 'Matemáticas discretas'
+              },
+              {
+                id: 5,
+                name: 'Álgebra Lineal II'
+              },
+              {
+                id: 5,
+                name: 'Estructura socio-económica de México'
+              },
+          ],
+          diciplinariasObligatorias: [
+              {
+                id: 1,
+                name: 'Análisis de Algoritmos'
+              },
+              {
+                id: 2,
+                name: 'Metodología de la programación'
+              },
+             {
+                id: 3,
+                name: 'Teoría de Autómatas'
+              },
+              {
+                id: 4,
+                name: 'Ingeniería de software'
               },
               {
                 id: 5,
                 name: 'Compiladores'
+              },
+              {
+                id: 5,
+                name: 'Redes de datos'
+              },
+              {
+                id: 5,
+                name: 'Teoría de grupos'
+              },
+              {
+                id: 5,
+                name: 'Geometría'
+              },
+              {
+                id: 5,
+                name: 'Cálculo avanzado'
+              },
+              {
+                id: 5,
+                name: 'Análisis matemático'
+              },
+              {
+                id: 5,
+                name: 'Métodos numéricos'
+              },
+              {
+                id: 5,
+                name: 'Ecuaciones diferenciales ordinarias'
+              },
+              {
+                id: 5,
+                name: 'Métodos Experimentales'
+              },
+              {
+                id: 5,
+                name: 'Electricidad y magnetismo'
+              },
+              {
+                id: 5,
+                name: 'Circuitos eléctricos'
+              },
+              {
+                id: 5,
+                name: 'Tensores de relatividad especial'
+              },
+              {
+                id: 5,
+                name: 'Física térmica'
+              },
+              {
+                id: 5,
+                name: 'Estructura de la materia'
+              },
+              {
+                id: 5,
+                name: 'Métodos matemáticos de la física'
+              },
+          ],
+          terminalesObligatorias: [
+              {
+                id: 1,
+                name: 'Sistemas distribuidos'
+              },
+              {
+                id: 2,
+                name: 'Reingenieria de procesos'
+              },
+             {
+                id: 3,
+                name: 'Simulación'
+              },
+              {
+                id: 4,
+                name: 'Aspectos Legales,Sociales y éticos de la comptuación'
+              },
+              {
+                id: 5,
+                name: 'Didáctica'
+              },
+              {
+                id: 5,
+                name: 'Modelación Lineal'
+              },
+              {
+                id: 5,
+                name: 'Habilidades del pensamiento y didáctica de las matemáticas	'
+              },
+              {
+                id: 5,
+                name: 'Teoría electromagnética'
+              },
+              {
+                id: 5,
+                name: 'Mecánica Estadística'
+              },
+              {
+                id: 5,
+                name: 'Física computacional'
               }
+          ],
+          basicasOptativas: [
+              {
+                id: 1,
+                name: 'Introduccion a las ciencias computacionales'
+              }
+              
           ],
           showModal:false,
           showNewModal: false
@@ -102,14 +318,15 @@ export default {
   },
 methods: 
     {
-        deletePeriod : function(index){
+        deleteMateria : function(index,arreglo){
             //alert(index);
-            this.Groups.splice(index-1,1);
+            this.arreglo.splice(index-1,1);
         },
         addPeriod : function(){
             this.Groups.push({id:this.Groups.length+1,name:this.period});
             this.period = '';
-        }
+        },
+        
     
     }
 }
@@ -224,4 +441,36 @@ input{
     #obligatorias{
         margin-left: 250px;
     }
+    
+    .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+        
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+    
+    .materia:hover{
+        text-decoration: underline;
+        cursor: pointer;
+        color: red;
+    }
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: block;
+    overflow: hidden;
+}
+
 </style>
