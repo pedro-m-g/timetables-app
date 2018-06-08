@@ -3,17 +3,22 @@
     <div class="box">
       <h1> Registrar Materia</h1>
       <form @submit.prevent="$emit('submit', $event)" class="form">
-        <label for="fclave">Clave</label>
-        <input type="text" id="fclave" name="clave">
+        
 
         <label for="fnombre">Nombre</label>
         <input type="text" id="fnombre" name="clave">
 
-        <label for="fnombrec">Nombre corto</label>
-        <input type="text" id="fnombrec" name="clave">
+        <div class="test">
 
-        <label for="fcreditos">Creditos</label>
-        <input type="text" id="fcreditos" name="clave">
+          <label for="fnombrec">Nombre corto</label>
+          <input type="text" id="fnombrec" name="clave">
+
+          <label for="fclave">Clave</label>
+          <input type="text" id="fclave" name="clave">
+
+          <label for="fcreditos">Creditos</label>
+          <input type="text" id="fcreditos" name="clave">
+        </div>
 
         <div class="test">
 
@@ -38,16 +43,19 @@
 
           <label for="fsemestre">Semestre</label>
           <select id="semestre" name="fsemestre">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="1">I</option>
+            <option value="2">II</option>
+            <option value="3">III</option>
+            <option value="3">IV</option>
+            <option value="3">V</option>
+            <option value="3">VI</option>
+            <option value="3">VII</option>
+            <option value="3">VIII</option>
           </select>
 
           <label for="fplan">Plan</label>
           <select id="plan" name="fplan">
             <option value="1">2016</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
           </select>
 
         </div>

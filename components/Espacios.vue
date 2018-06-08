@@ -30,36 +30,16 @@
       </div>
     </div>
   </transition>
-      
-      
-      
-      
-      <div class="row">
-          <div v-for="group in Groups"
-            :value="group.id"
-            :key="group.id" class="col col-6 square">
-          <p>{{group.name}}</p>
-        <div id="options">
-             <button class="option" @click="showModal = true">
-               <i class="fa fa-eye"></i>
-             </button>
-             <button class="option">
-               <i class="fa fa-pencil"></i>
-             </button>
-             <button class="option close" v-on:click="deletePeriod(group.id)">
-               <i class="fa fa-close"></i>
-             </button>
-        </div>
-              
-      </div>
-    </div>
+  <Accordion/>
   </div>
 </template>
 <script>
 import EspaciosForm from '@/components/Forms/EspaciosForm'
+import Accordion from '@/components/Accordion'
 export default {
   components: {
-    EspaciosForm
+    EspaciosForm,
+    Accordion
   },
   data () {
       return {

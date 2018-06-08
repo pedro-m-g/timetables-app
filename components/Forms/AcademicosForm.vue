@@ -4,14 +4,17 @@
       <h1> Registrar Academico</h1>
       <form class="form">
 
-        <label for="fnempleado">No. de Empleado</label>
-        <input type="text" id="fnempleado" name="clave">
-          
-        <label for="fnombre">Nombre</label>
-        <input type="text" id="fnombre" name="clave">
+        <div class="test">
 
-        <label for="fapellido">Apellido</label>
-        <input type="text" id="fapellido" name="clave">
+          <label for="fnempleado">No. de Empleado</label>
+          <input type="text" id="fnempleado" name="clave">
+            
+          <label for="fnombre">Nombre</label>
+          <input type="text" id="fnombre" name="clave">
+
+          <label for="fapellido">Apellido</label>
+          <input type="text" id="fapellido" name="clave">
+        </div>
 
 
         <div class="test">
@@ -19,29 +22,26 @@
           <label for="fcorreo">Correo</label>
           <input type="text" id="fcorreo" name="clave">
 
-          <label for="ftp">Telefono particula</label>
+          <label for="ftp">Teléfono particula</label>
           <input type="text" id="ftp" name="clave">
 
-          <label for="fto">Telefono oficina</label>
+          <label for="fto">Teléfono oficina</label>
           <input type="text" id="fto" name="clave">
         </div>
 
-        <div class="test">
+        <div class="test2">
 
-          <label for="fcategoria">Categoria</label>
+          <label for="fcategoria">Categoría</label>
           <select id="fcategoria" name="categoria">
             <option value="asignatura">Asignatura</option>
             <option value="planta">Planta</option>
           </select>
 
-          <label for="fhoras">Horas</label>
-          <input type="text" id="fhoras" name="horas">
+        
 
           <label for="fplan">Plan</label>
           <select id="plan" name="fplan">
             <option value="1">2016</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
           </select>
 
         </div>
@@ -77,6 +77,10 @@ export default {
 
 .test{
   column-count: 3;
+}
+
+.test2{
+  column-count: 2;
 }
 
 input, label {

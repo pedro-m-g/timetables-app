@@ -13,7 +13,9 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "vue-accordion": "^1.0.0",
+    "vue-accordion-menu": "^0.1.46"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

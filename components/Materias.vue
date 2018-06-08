@@ -67,9 +67,11 @@
 </template>
 <script>
 import MateriasForm from '@/components/Forms/MateriasForm'
+import Accordion from '@/components/Accordion'
 export default {
   components: {
-    MateriasForm
+    MateriasForm,
+    Accordion
   },
   data () {
       return {
