@@ -32,27 +32,7 @@
       <transition name="modal" v-if="showNewModal">
     <div class="modal-mask">
       <div class="modal-wrapper">
-        <div class="modal-container">
-            <h3>En construcción</h3>
-          
-            
-            <form @submit.prevent="addPeriod">
-              <input type="text" placeholder="Nombre del académico" v-model="period"><br><br>
-                <label>Carrera </label><br>
-                <select style="width:250px;">
-                  <option>Ciencias computacionales</option>
-                  <option>Matemáticas Aplicadas</option>
-                  <option>Física</option>
-                  <option>Biología</option>
-                  <option>Profesor de asignatura</option>
-                </select>
-                <button class="modal-default-button" v-on:click="showNewModal = false">
-                OK
-              </button>
-            </form>
-
-
-        </div>
+        <academicos-form @submit="showNewModal = false" />
       </div>
     </div>
   </transition>
@@ -82,8 +62,11 @@
   </div>
 </template>
 <script>
-
+import AcademicosForm from '@/components/Forms/AcademicosForm'
 export default {
+  components: {
+    AcademicosForm
+  },
   data () {
       return {
           period: '',

@@ -26,19 +26,7 @@
       <transition name="modal" v-if="showNewModal">
     <div class="modal-mask">
       <div class="modal-wrapper">
-        <div class="modal-container">
-            <h3>En construcción</h3>
-          
-            
-            <form @submit.prevent="addPeriod">
-              <input type="text" placeholder="Periodo: ej. 2018-1" v-model="period">
-                <button class="modal-default-button" v-on:click="showNewModal = false">
-                OK
-              </button>
-            </form>
-
-
-        </div>
+        <espacios-form @submit="showNewModal = false" />
       </div>
     </div>
   </transition>
@@ -68,8 +56,11 @@
   </div>
 </template>
 <script>
-
+import EspaciosForm from '@/components/Forms/EspaciosForm'
 export default {
+  components: {
+    EspaciosForm
+  },
   data () {
       return {
           period: '',
