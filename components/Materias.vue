@@ -312,6 +312,8 @@ export default {
               }
               
           ],
+          diciplinariasOptativas: [],
+          terminalesOptativas: [],
           showModal:false,
           showNewModal: false
       }
